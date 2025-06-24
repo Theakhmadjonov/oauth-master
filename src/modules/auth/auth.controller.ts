@@ -1,4 +1,4 @@
-import { Controller, Get, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { Request } from 'express';
 import { AuthService } from './auth.service';
@@ -27,5 +27,17 @@ export class AuthController {
   async oauthGithubCallback(@Req() req: Request) {
     const user = req['user'];
     return await this.authService.oauthGithubCallback(user);
+  }
+
+  @Post('login')
+  async login(@Body() data: { email: string; password: string }) {
+    return await this.authService.login(data);
+  }
+
+  @Post('register')
+  async register(
+    @Body() data: { email: string; password: string; fullName: string },
+  ) {
+    return await this.authService.register(data);
   }
 }

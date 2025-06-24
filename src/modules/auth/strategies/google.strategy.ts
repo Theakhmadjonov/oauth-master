@@ -8,8 +8,8 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
     super({
       clientID: process.env.CLIENT_ID_GOOGLE as string,
       clientSecret: process.env.CLIENT_SECRET_GOOGLE as string,
-      callbackURL: 'http://loclahost:4000/api/auth/google/callback',
-      scope: ["email", "profile"],
+      callbackURL: process.env.CALLBACK_URL_GOOGLE as string,
+      scope: ['email', 'profile'],
     });
   }
   validate(
@@ -19,7 +19,5 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
   ): any {
     const user = profile._json;
     verifyCallback(null, user);
-
-  
   }
 }
