@@ -21,5 +21,9 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
     verifyCallback(null, user);
 
     
+
+
+
+    
   }
 }
