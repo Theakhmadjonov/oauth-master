@@ -28,12 +28,15 @@
     "@nestjs/passport": "^11.0.5",
     "@nestjs/platform-express": "^11.0.1",
     "@prisma/client": "^6.10.1",
+    "@types/passport-github2": "^1.2.9",
     "bcrypt": "^6.0.0",
     "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
     "passport-google-oauth20": "^2.0.0",
     "prisma": "^6.10.1",
     "reflect-metadata": "^0.2.2",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",

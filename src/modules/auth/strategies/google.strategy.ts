@@ -20,10 +20,6 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
     const user = profile._json;
     verifyCallback(null, user);
 
-    
-
-
-
-    
+  
   }
 }
